@@ -3,7 +3,7 @@
 
 <h1>Insert Record</h1>
 
-< form action="index.php?page=tasks&action=insert&id=<?php echo $_SESSION['userID']; ?>" method="post" enctype="multipart/form-data" >
+<form action="index.php?page=tasks&action=insert&id=<?php echo $_SESSION['userID']; ?>" method="post" enctype="multipart/form-data" >
 
     <?php
 

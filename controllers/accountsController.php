@@ -60,7 +60,8 @@ class accountsController extends http\controller
             //this creates the password
             //this is a mistake you can fix...
             //Turn the set password function into a static method on a utility class.
-            $user->password = $user->setPassword($_POST['password']);
+            //$user->password = $user->setPassword($_POST['password']);
+            $user->password = $_POST['password'];
             $user->save();
 
             //you may want to send the person to a
@@ -83,7 +84,8 @@ class accountsController extends http\controller
     {
         $record = accounts::findOne($_REQUEST['id']);
 
-        self::getTemplate('edit_account', $record);
+
+        self::getTemplate('profile', $record);
 
     }
 //this is used to save the update form data
@@ -101,11 +103,31 @@ class accountsController extends http\controller
 
     }
 
+    public static function editprofile() {
+        $user = accounts::findUserbyEmail($_REQUEST['email']);
+
+        $user->email = $_POST['email'];
+        $user->fname = $_POST['name'];
+        $user->password = $_POST['password'];
+        $user->save();
+        header("Location: index.php?page=accounts&action=all");
+
+    }
+
     public static function delete() {
 
         $record = accounts::findOne($_REQUEST['id']);
         $record->delete();
         header("Location: index.php?page=accounts&action=all");
+    }
+
+
+    public static function logout()
+    {
+        session_start();
+        session_destroy();
+
+        header ("Location: https://web.njit.edu/~yb83/finalpro/index.php");
     }
 
     //this is to login, here is where you find the account and allow login or deny.
@@ -124,8 +146,11 @@ class accountsController extends http\controller
         if ($user == FALSE) {
             echo 'user not found';
         } else {
-
+//$user->password == password_hash($_POST['password'], PASSWORD_DEFAULT)
+            //$user->checkPassword($_POST['password'])
             if($user->password == $_POST['password']) {
+
+
 
                 echo 'login';
 
@@ -141,7 +166,7 @@ class accountsController extends http\controller
                 print_r($_SESSION);
             } else {
                 echo 'password does not match';
-                echo $_POST['password'];
+
             }
 
         }

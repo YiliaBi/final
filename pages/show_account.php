@@ -15,20 +15,21 @@
     <![endif]-->
 </head>
 
-<body>
+<br>
 
-<h1>Email: <?php echo $data->email; ?></h1>
-<h1>First Name: <?php echo $data->fname; ?></h1>
-<h1>Last Name: <?php echo $data->lname; ?></h1>
+<h4>Email: <?php echo $data->email; ?></h4>
+<h4>First Name: <?php echo $data->fname; ?></h4>
+<h4>Last Name: <?php echo $data->lname; ?></h4>
 
 
 <?php
-//this is how you print something  $data contains the record that was selected on the table.
+
 
 print_r($data);
 
 
 ?>
+
 
 <form action="index.php?page=accounts&action=save&id=<?php echo $data->id; ?>" method="post">
 

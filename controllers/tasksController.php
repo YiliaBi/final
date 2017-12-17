@@ -25,7 +25,7 @@ class tasksController extends http\controller
     public static function all()
     {
         $records = todos::findAll();
-        session_start();
+        //session_start();
 
         $userID = $_SESSION['userID'];
 
@@ -69,7 +69,7 @@ class tasksController extends http\controller
 
         //$record = todos::findOne($_REQUEST['id']);
         //$record->body = $_REQUEST['body'];
-        session_start();
+        //session_start();
         $id = $_REQUEST['id'];
         $user = accounts::findOne($id);
 
@@ -103,7 +103,10 @@ class tasksController extends http\controller
         $record = todos::findOne($_REQUEST['id']);
         $record->delete();
 
-        echo "delete";
+        echo "Deleted The following record";
+        echo utility\htmlTable::generateTableFromOneRecord($record);
+
+        echo '<a class="btn btn-info" href="https://web.njit.edu/~yb83/finalpro/index.php?page=tasks&action=all">Go back to Tasks Page</a>';
         //header("Location: index.php?page=tasks&action=all");
 
     }

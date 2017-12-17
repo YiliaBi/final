@@ -44,7 +44,9 @@ final class account extends \database\model
 
     public function checkPassword($LoginPassword) {
 
-        return password_verify($LoginPassword, $this->password);
+
+
+        return password_verify($LoginPassword, substr($this->password, 0, 60));
 
 
     }

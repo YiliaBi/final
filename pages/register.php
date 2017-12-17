@@ -1,34 +1,51 @@
-<!doctype html>
-
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-
-    <title>The HTML5 Herald</title>
-    <meta name="description" content="The HTML5 Herald">
-    <meta name="author" content="SitePoint">
-
-    <link rel="stylesheet" href="css/styles.css?v=1.0">
-
-    <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-    <![endif]-->
-</head>
-
-<body>
+<br/>
 
 
-<form action="index.php?page=accounts&action=register" method="post">
-    First name: <input type="text" name="fname"><br>
-    Last name: <input type="text" name="lname"><br>
-    Email: <input type="text" name="email"><br>
-    Phone: <input type="text" name="phone"><br>
-    Birthday: <input type="text" name="birthday"><br>
-    Gender: <input type="text" name="gender"><br>
-    Password: <input type="password" name="password"><br>
-    <input type="submit" value="Submit form">
-</form>
+<div class="container">
+    <div class="col-md-6  col-sm-12 col-xs-12">
 
+    <form action="index.php?page=accounts&action=register" method="post">
+
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="fname" class="form-control" required placeholder="Enter first name">
+        </div>
+
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lname" class="form-control" required placeholder="Enter last  name">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="Email" class="form-control" required placeholder="Enter email">
+        </div>
+
+        <div class="form-group">
+            <label>Phone</label>
+            <input type="text" name="phone" class="form-control" required placeholder="Enter phone">
+        </div>
+
+        <div class="form-group">
+            <label>Birthday</label>
+            <input type="text" name="Birthday" class="form-control" required placeholder="Enter birthday">
+        </div>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <input type="text" name="gender" class="form-control" required placeholder="Enter gender">
+        </div>
+
+
+        <div class="form-group">
+            <label>Password</label>
+            <input type="text" name="password" class="form-control" required placeholder="Enter password">
+        </div>
+
+        <input type="submit" value="Submit form">
+    </form>
+    </div>
+</div>
 
 <script src="js/scripts.js"></script>
 </body>

@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <label>Email</label>
-            <input type="text" name="Email" class="form-control" required placeholder="Enter email">
+            <input type="text" name="email" class="form-control" required placeholder="Enter email">
         </div>
 
         <div class="form-group">
@@ -28,7 +28,7 @@
 
         <div class="form-group">
             <label>Birthday</label>
-            <input type="text" name="Birthday" class="form-control" required placeholder="Enter birthday">
+            <input type="text" name="birthday" class="form-control" required placeholder="Enter birthday">
         </div>
 
         <div class="form-group">
